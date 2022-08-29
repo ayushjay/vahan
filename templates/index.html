@@ -1,0 +1,293 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+	<!-- Main Start -->
+	<div class="main-section">
+		<!--Main Banner-->
+		<div class="page-section" style="background: url({% static 'assets/extra-images/full-section-img.jpg' %})no-repeat; background-size:cover; padding:206px 0 80px; text-shadow: 3px 4px 6px rgba(0,0,0,.37);margin-top:-30px;">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<div class="image-frame defualt" style="padding-top:40px;">
+							<div class="cs-media">
+								<figure> <img src="{% static 'assets/extra-images/image-frame-1.png' %}" alt=""/> </figure>
+							</div>
+						</div>
+					</div>
+			
+				</div>
+			</div>
+		</div>
+		<!--Main Banner-->
+		<!--Main Banner form-->
+		<div class="page-section" style="background: rgba(36, 41, 49, 1); padding-top:33px;-webkit-box-shadow: 0 0 5px rgba(0,0,0,.4), inset 1px 2px rgba(255,255,255,.3);-moz-box-shadow: 0 0 5px rgba(0,0,0,.4), inset 1px 2px rgba(255,255,255,.3);box-shadow: 0 0 5px rgba(0,0,0,.4), inset 0px 2px rgba(255,255,255,.3);border: solid 1px #242931;margin-bottom:110px;">
+			<div class="container">
+				<div class="row">
+					<div class="section-fullwidtht col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<div class="row">
+							<!--Element Section Start-->
+							<div class="main-search">
+								<form method="get" action="{% url 'filter_results' %}">
+									<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
+								<p>Brand:</p>
+									{{ myFilter.form.brand }}
+									</div>
+									<div class="col-lg-1 col-md-1 col-sm-4 col-xs-4">
+								<p>Category:</p>
+									{{ myFilter.form.category }}
+									</div>
+									<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
+								<p>Year greater then:</p>
+									{{ myFilter.form.year_gt }}
+									</div>
+									<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
+								<p>Year less then:</p>
+									{{ myFilter.form.year_lt }}
+									</div>
+									<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
+								<p>Price greather then:</p>
+									{{ myFilter.form.price_gt }}
+									</div>
+									<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
+								<p>Price less then:</p>
+									{{ myFilter.form.price_lt }}
+									</div>
+									<div class="col-lg-1 col-md-1 col-sm-4 col-xs-4">
+								<p>Transmission:</p>
+									{{ myFilter.form.transmission }}
+									</div>
+
+
+
+	<br>
+			<button class="btn btn-dark" type="submit">Search</button>
+								</form>
+							</div>
+							<!--Element Section End-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Main Banner form-->
+		<!--image frame with cloum text by My Shahzad-->
+		<div class="page-section" style="margin-bottom:110px;">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<div class="image-frame defualt">
+							<div class="cs-media">
+								<figure> <img src="{% static 'assets/extra-images/image-frame.jpg' %}" alt=""/> </figure>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<div class="cs-column-text"> <span class="cs-color" style="font-size:14px;margin-bottom:15px;text-transform: capitalize !important; font-weight:bold;">ADAPTIVE DRIVE HEAD uP DISPLAY</span>
+							<h1 style=" line-height:43px !important;">Matte Black Chevy C7 Corvette
+								Stingray on Custom 21in Forgiato
+								Quinto Wheels.</h1>
+							<p style="margin-bottom:25px; ">Arear view camera and lane departure warning. This car has 6 airbags fitted for your protection. It has front &amp; rear power windows, central locking and 2nd row split folding seats. Family life is made easy in this 2016 Jaguar XF. This car has Bluetooth connectivity, side curtain airbags, subwoofer, trailer sway control, sports pedals and heads up information display. This car has forward collision alert/warning. This car comes with enough seats for 5. You can relax.</p>
+							<a href="#" class="cs-button" style="color:#fff;font-size:11px; padding:12px 45px; font-weight:bold; text-transform:uppercase;">Kim Broders</a> </div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!--full width category section-->
+		<!--tabs section-->
+		<div class="page-section" style="padding-top:70px; padding-bottom:65px;">
+			<div class="container">
+				<div class="row">
+					<div class="section-fullwidtht col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<div class="row">
+							<div class="col-lg-12 col-md-12 co-sm-12 col-xs-12"><!--Element Section Start-->
+								<div class="cs-section-title">
+									<h3 style="text-transform:uppercase !important;">Perfect Cars for you</h3>
+									<p style="text-transform:uppercase;font-size:11px;color:#999999 !important;">It will help us find the Toyota you're looking for in your area.</p>
+								</div>
+								<!--Tabs Start-->
+
+								<div class="cs-tabs full-width">
+									<ul class="nav nav-tabs">
+										<li class="active"><a data-toggle="tab" href="#home">New Cars</a></li>
+										<li><a data-toggle="tab" href="#menu1">Used Cars</a></li>
+
+									</ul>
+									<div class="tab-content">
+										<div id="home" class="tab-pane fade in active">
+											<div class="row">
+												{% for car in new_cars %}
+												<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+													<div class="auto-listing auto-grid">
+														<div class="cs-media">
+															<figure> <img src="{{car.image_main.url }}" alt="#"/>
+															</figure>
+														</div>
+														<div class="auto-text"> <span class="cs-categories"><a href="#">{{ car.category }}</a></span>
+															<div class="post-title">
+																<h6><a href="#">{{ car.brand }} </a></h6>
+																<div class="auto-price"><span class="cs-color">{{ car.price }} $</span></div>
+															</div>
+															<i class="icon-car228 cs-color" style="font-size:20px"> </i>{{ car.transmission }}
+															<br>Year: {{ car.year }}
+
+															<a href="{{ car.get_absolute_url }}" class="View-btn">View Detail<i class=" icon-arrow-long-right"></i></a> </div>
+													</div>
+												</div>
+												{% endfor %}
+											</div>
+										</div>
+										<div id="menu1" class="tab-pane fade">
+											<div class="row">
+												{% for car in used_cars %}
+												<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+													<div class="auto-listing auto-grid">
+														<div class="cs-media">
+															<figure> <img src="{{car.image_main.url }}" alt="#"/>
+															</figure>
+														</div>
+														<div class="auto-text"> <span class="cs-categories"><a href="#">{{ car.category }}</a></span>
+															<div class="post-title">
+																<h6><a href="#">{{ car.brand }} </a></h6>
+																<div class="auto-price"><span class="cs-color">{{ car.price }} $</span></div>
+															</div>
+															<i class="icon-car228 cs-color" style="font-size:20px"> </i>{{ car.transmission }}
+															<br>Year: {{ car.year }}
+
+															<a href="{{ car.get_absolute_url }}" class="View-btn">View Detail<i class=" icon-arrow-long-right"></i></a> </div>
+													</div>
+												</div>
+												{% endfor %}
+
+
+											</div>
+										</div>
+
+									</div>
+								</div>
+								<!--Tabs End-->
+								<!--Element Section End--></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--tabs section-->
+		<!--Latest Model Auto Slider Start-->
+		<div class="page-section" style="background: rgba(237, 240, 245, 1); padding-top:70px; padding-bottom:70px;">
+			<div class="container">
+				<div class="row">
+					<div class="section-fullwidtht col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<div class="row">
+							<!--Element Section Start-->
+							<div class="cs-auto-listing cs-auto-box">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<div class="cs-element-title">
+										<h2>Our latest cars</h2>
+									</div>
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<ul class="cs-auto-box-slider row">
+										{% for car in latest_cars %}
+										<li class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+											<div class="cs-media">
+												<figure> <a href="#"> <img src="{{car.image_main.url }}" alt=""/> </a>
+													<figcaption> </figcaption>
+												</figure>
+
+											</div>
+											{{ car.brand }}
+											<br>Category:{{ car.category }}
+											<div class="auto-text cs-bgcolor"> <span>{{ car.price }} $</span><a href="{{ car.get_absolute_url }}" class="cs-button pull-right"><i class="icon-arrow_forward
+"></i></a> </div>
+										</li>
+										{% endfor %}
+									</ul>
+								</div>
+							</div>
+							<!--Element Section End-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Latest Model Auto Slider End-->
+
+		<div class="page-section" style="margin-bottom:70px;">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<div class="section-title" style="text-align:center; color:#333333; margin-bottom:45px;">
+							<h3 style="margin-bottom:5px;">WHY CHOOSE US</h3>
+							<p>It will help us find the Toyota you're looking for in your area.</p>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="cs-services">
+							<div class="cs-media"> <i class="icon-fuel1 cs-color" style="font-size:70px;"> </i> </div>
+							<div class="cs-text">
+								<h6>OIL CHANGES </h6>
+								<p>Vivamus erat diam, condimentum in aliquet sed, bibendum at quam. Phasellus lacus mauris.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="cs-services">
+							<div class="cs-media"> <i class="icon-car230 cs-color" style="font-size:40px"> </i> </div>
+							<div class="cs-text">
+								<h6>AIR CONDITIONING</h6>
+								<p>Nulla a gravida purus. Fusce at interdum libero, at. Vivamus erat diam, condimentum in bibendum                                            at quam.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="cs-services">
+							<div class="cs-media"> <i class="icon-energy42 cs-color" style="font-size:40px"> </i> </div>
+							<div class="cs-text">
+								<h6>AUTO ELECTRIC </h6>
+								<p>Etiam et maximus nisi, nec scelerisque neque. Nunc euismod iaculis urna, id eleifend lorem                                             aliquet at. </p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="cs-services">
+							<div class="cs-media"> <i class="icon-car36 cs-color" style="font-size:40px"> </i> </div>
+							<div class="cs-text">
+								<h6>BRAKE SERVICE </h6>
+								<p>Vivamus erat diam, condimentum in aliquet sed, bibendum at quam. Phasellus lacus mauris.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="cs-services">
+							<div class="cs-media"> <i class="icon-car228 cs-color" style="font-size:40px"> </i> </div>
+							<div class="cs-text">
+								<h6>TRANSMISSION</h6>
+								<p>Nulla a gravida purus. Fusce at interdum libero, at. Vivamus erat diam, condimentum in bibendum                                            at quam.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+						<div class="cs-services">
+							<div class="cs-media"> <i class="icon-transport177 cs-color" style="font-size:40px"> </i> </div>
+							<div class="cs-text">
+								<h6>TIRE &amp; WHEEL SERVICE</h6>
+								<p>Etiam et maximus nisi, nec scelerisque neque. Nunc euismod iaculis urna, id eleifend lorem                                              aliquet at. </p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- Main End -->
+
+
+
+</div>
+{% endblock content %}

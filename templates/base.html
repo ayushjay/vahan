@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+{% include 'head.html' %}
+</head>
+
+<body class="wp-automobile">
+  {% include 'nav.html' %}
+  {% block content %}
+  {% endblock content %}
+  {% include 'footer.html' %}
+  {% include 'scripts.html' %}
+
+
+</body>
+</html>

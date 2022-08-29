@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load for_pagination %}
+
+{% block content %}
+<div class="main-search">
+  <form method="get" action="{% url 'filter_results' %}">
+    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
+  <p>Brand:</p>
+    {{ myFilter.form.brand }}
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-4 col-xs-4">
+  <p>Category:</p>
+    {{ myFilter.form.category }}
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
+  <p>Year greater then:</p>
+    {{ myFilter.form.year_gt }}
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
+  <p>Year less then:</p>
+    {{ myFilter.form.year_lt }}
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
+  <p>Price greather then:</p>
+    {{ myFilter.form.price_gt }}
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
+  <p>Price less then:</p>
+    {{ myFilter.form.price_lt }}
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-4 col-xs-4">
+  <p>Transmission:</p>
+    {{ myFilter.form.transmission }}
+    </div>
+
+
+
+<br>
+<button class="btn btn-dark" type="submit">Search</button>
+  </form>
+</div>
+<br><br><br>
+<h3>Filter results</h3>
+
+
+
+<div class="row">
+  {% for car in all %}
+  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    <div class="auto-listing auto-grid">
+      <div class="cs-media">
+        <figure> <img src="{{car.image_main.url }}" alt="#"/>
+        </figure>
+      </div>
+      <div class="auto-text"> <span class="cs-categories"><a href="#">{{ car.category }}</a></span>
+        <div class="post-title">
+          <h6><a href="#">{{ car.brand }} </a></h6>
+          <div class="auto-price"><span class="cs-color">{{ car.price }} $</span></div>
+        </div>
+        <i class="icon-car228 cs-color" style="font-size:20px"> </i>{{ car.transmission }}
+        <br>Year: {{ car.year }}
+
+        <a href="{{ car.get_absolute_url }}" class="View-btn">View Detail<i class=" icon-arrow-long-right"></i></a> </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="{% fixed_pn 1 'page' request.GET.urlencode %}">&laquo; first</a>
+            <a href="{% fixed_pn page_obj.previous_page_number 'page' request.GET.urlencode %}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="{% fixed_pn page_obj.next_page_number 'page' request.GET.urlencode %}">next</a>
+            <a href="{% fixed_pn page_obj.paginator.num_pages 'page' request.GET.urlencode %}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
+{% endblock content %}
