@@ -2,10 +2,11 @@ import requests
 from bs4 import BeautifulSoup
 
 
-def happyScrape():
-
-
-    url = 'https://www.carwale.com/honda-cars/amaze/user-reviews/'
+def happyScrape(brand, model):
+    if brand == 'BMW' and model == 'X1':
+        url = 'https://www.carwale.com/bmw-cars/x1/user-reviews/'
+    elif brand == 'HN' and model == 'AM':
+        url = 'https://www.carwale.com/honda-cars/amaze/user-reviews/'
     headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36'}
     cw_result = requests.get(url, headers=headers)
 

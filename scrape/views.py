@@ -9,6 +9,14 @@ from django.http import (
 from django.urls import reverse
   
 
+"""
+def Convert(a):
+    it = iter(a)
+    res_dct = dict(zip(it, it))
+    return res_dct
+"""       
+
+
 def ScrapeView(request):
 
     
@@ -16,23 +24,38 @@ def ScrapeView(request):
     context['SelectCarForm'] = SelectCarForm()
     #for k,v in context:
     #   if k == 'BMW' and v == "X1":
+    #conList =  context.items()
+    #request.session['conList'] = conList
     if request.method == 'POST' and 'run_script' in request.POST:
-        from .scrape import happyScrape
+        form = SelectCarForm(request.POST)
+        if form.is_valid():
+            from .scrape import happyScrape
 
-        # call function
-        #function_to_run() 
-        happyScrape()
+            happyScrape(form.cleaned_data['brand'], form.cleaned_data['car_model'])
 
         
+        # call function
+        #function_to_run() 
+        #happyScrape()       
     # return user to required page
     #return HttpResponseRedirect(reverse(scrape:ScrapeView)
-
     
-
     return render(request, "scrape.html", context)
 
+"""
+def ScrapePostReqView(request):
+    conList = request.session.get('conList')
 
-""" def SubmitView(request):
+    context = Convert(conList)
+
+    return render(request,"scrapepostreq.html",context)
+
+
+
+
+
+
+    def SubmitView(request):
     if request.method == 'GET':
         form = SelectCarForm()
     else:

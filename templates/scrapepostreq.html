@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+
+    <title>Vaahan</title>
+{% include 'head.html' %}
+</head>
+
+<body class="wp-automobile">
+  {% include 'nav.html' %}
+  {% block content %}
+  {% endblock content %}
+
+
+<h1>
+    Your chose brand is {{ brand }}
+</h1>
+
+
+  {% include 'footer.html' %}
+  {% include 'scripts.html' %}
+ 
+
+   
+</body>
+</html>

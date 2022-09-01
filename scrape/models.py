@@ -5,7 +5,8 @@ from django.db import models
 class SelectCar(models.Model):
     BRANDS = (
         ('BMW','BMW'),
-        ('MR','Mercedes')
+        ('MR','Mercedes'),
+        ('HN','Honda'),
     )
     brand = models.CharField(max_length=30,
                   choices=BRANDS,
@@ -13,7 +14,8 @@ class SelectCar(models.Model):
     CAR_MODELS = (
         ('X1','X1'),
         ('X2','X2'),
-        ('X3','X3')
+        ('X3','X3'),
+        ('AM','Amaze'),
 
     )
 
