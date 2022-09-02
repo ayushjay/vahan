@@ -5,8 +5,37 @@ from bs4 import BeautifulSoup
 def happyScrape(brand, model):
     if brand == 'BMW' and model == 'X1':
         url = 'https://www.carwale.com/bmw-cars/x1/user-reviews/'
+    elif brand == 'BMW' and model == 'X3':
+        url = 'https://www.carwale.com/bmw-cars/x3-2018-2022/user-reviews/'
+    elif brand == 'BMW' and model == 'X5':
+        url = 'https://www.carwale.com/bmw-cars/x5/user-reviews/'
+    elif brand == 'BMW' and model == 'X7':
+        url = 'https://www.carwale.com/bmw-cars/x7/user-reviews/'
+    elif brand == 'BMW' and model == '3S':
+        url = 'https://www.carwale.com/bmw-cars/3-series/user-reviews/'
+    elif brand == 'BMW' and model == '5S':
+        url = 'https://www.carwale.com/bmw-cars/5-series-2017-2021/user-reviews/'
+    elif brand == 'BMW' and model ==' 7S':
+        url = 'https://www.carwale.com/bmw-cars/7-series/user-reviews/'
     elif brand == 'HN' and model == 'AM':
         url = 'https://www.carwale.com/honda-cars/amaze/user-reviews/'
+    elif brand == 'MR' and model == 'EC':
+        url = 'https://www.carwale.com/mercedes-benz-cars/e-class/user-reviews/'
+    elif brand == 'AU' and model == 'A4':
+        url = 'https://www.carwale.com/audi-cars/a4/user-reviews/'
+    elif brand == 'AU' and model == 'A8':
+        url = 'https://www.carwale.com/audi-cars/a8-l-2018-2022/user-reviews/'
+    elif brand == 'AU' and model == 'A3':
+        url = 'https://www.carwale.com/audi-cars/a3/user-reviews/'
+    elif brand == 'AU' and model == 'A6':
+        url = 'https://www.carwale.com/audi-cars/a6/user-reviews/'
+    elif brand == 'AU' and model == 'Q2':
+        url = 'https://www.carwale.com/audi-cars/q2/user-reviews/'
+    elif brand == 'AU' and model == 'Q5':
+        url = 'https://www.carwale.com/audi-cars/q5-2018-2020/user-reviews/'
+
+
+    
     headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36'}
     cw_result = requests.get(url, headers=headers)
 

@@ -9,14 +9,6 @@ from django.http import (
 from django.urls import reverse
   
 
-"""
-def Convert(a):
-    it = iter(a)
-    res_dct = dict(zip(it, it))
-    return res_dct
-"""       
-
-
 def ScrapeView(request):
 
     
@@ -43,6 +35,11 @@ def ScrapeView(request):
     return render(request, "scrape.html", context)
 
 """
+def Convert(a):
+    it = iter(a)
+    res_dct = dict(zip(it, it))
+    return res_dct
+
 def ScrapePostReqView(request):
     conList = request.session.get('conList')
 
