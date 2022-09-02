@@ -7,7 +7,8 @@ from django.http import (
     Http404, HttpResponse, HttpResponsePermanentRedirect, HttpResponseRedirect,
 )
 from django.urls import reverse
-  
+
+# TODO add view for url not found
 
 def ScrapeView(request):
 
