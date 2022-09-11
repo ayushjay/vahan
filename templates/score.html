@@ -14,19 +14,13 @@
   {% endblock content %}
 
 <h2>
- 
+  Your Vaahan Score is: 
+
+  
+    {{ polarity }}
+
+    
 </h2>
-  <form action="scrape"  method = "POST">
-    {{ SelectCarForm }}
-
-    {% csrf_token %}
-    <button type="submit" name="run_script">Scrape Away!</button>
-</form>
-<!-- <form action="score" method = "POST">
-
-  {% csrf_token %}
-  <button type="submit" name="get_score">Get Vaahan Score</button>
-</form> -->
   {% include 'footer.html' %}
   {% include 'scripts.html' %}
  

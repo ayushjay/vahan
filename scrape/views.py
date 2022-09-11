@@ -23,8 +23,12 @@ def ScrapeView(request):
         form = SelectCarForm(request.POST)
         if form.is_valid():
             from .scrape import happyScrape
+            #from .sentiment import getSentiment
 
             happyScrape(form.cleaned_data['brand'], form.cleaned_data['car_model'])
+            
+            #getSentiment()
+
 
         
         # call function
@@ -32,8 +36,31 @@ def ScrapeView(request):
         #happyScrape()       
     # return user to required page
     #return HttpResponseRedirect(reverse(scrape:ScrapeView)
+    """ if request.method == 'POST' and 'get_score' in request.POST:
+        from .sentiment import getSentiment
     
+
+        context = {}
+        context['polarity'] = getSentiment()
+
+        return render(request, "score.html", context) 
+    """
     return render(request, "scrape.html", context)
+
+
+def ScoreView(request):
+    from .sentiment import getSentiment
+    
+
+    context = {}
+    context['polarity'] = getSentiment()
+
+    return render(request, "score.html", context)
+
+
+
+
+
 
 """
 def Convert(a):
@@ -73,5 +100,7 @@ def script_function( post_from_form )
   print post_from_form //optional,check what the function received from the submit;
   return subprocess.check_call(['/path/to/your/script.py', post_from_form])  
 """
+
+
 
    
