@@ -71,7 +71,7 @@ def happyScrape(brand, model):
         for item in scrapeList:
             # write each item on a new line
             f.write("%s\n" % item)
-
+    
 
 #happyScrape()
         

@@ -2,9 +2,12 @@
 #from .forms import SelectCarForm
 import requests
 from lxml import html
+import time
 
 
-def happyScrape(brand,model):
+def happyScrape2(brand,model):
+    time.sleep(1)
+    
     if brand == 'BMW' and model == 'X1':
         url = 'https://www.team-bhp.com/forum/luxury-imports-niche/213083-looking-buying-bmw-x1-need-advice.html'
 
@@ -46,8 +49,17 @@ def happyScrape(brand,model):
     path = '//*[starts-with(@id,"post_message_")]'
     source_code = html.fromstring(requests.get(url).content)
 
+    scrapeList2 = []
+
+
     for e in source_code.xpath(path):
-        print(e.text_content())
+        #print(e.text_content())
+        scrapeList2.append(e.text_content())
+    
+    with open(r'./scrape/scrapeListFile.txt', 'a') as f:
+        for item in scrapeList2:
+            # write each item on a new line
+            f.write("%s\n" % item)
 
 
 

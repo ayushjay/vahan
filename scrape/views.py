@@ -23,9 +23,11 @@ def ScrapeView(request):
         form = SelectCarForm(request.POST)
         if form.is_valid():
             from .scrape import happyScrape
+            from .scrape2 import happyScrape2
             #from .sentiment import getSentiment
 
             happyScrape(form.cleaned_data['brand'], form.cleaned_data['car_model'])
+            #happyScrape2(form.cleaned_data['brand'], form.cleaned_data['car_model'])
             
             #getSentiment()
 
