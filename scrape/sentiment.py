@@ -10,7 +10,7 @@ def getSentiment():
         #    analysis = TextBlob(line)
 
         #print (analysis.sentiment.polarity)
-        return round(analysis.sentiment.polarity * 5 + 5)
+        return round(analysis.sentiment.polarity * 5 + 5,2)
 
 #print (analysis.sentiment)
 

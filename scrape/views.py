@@ -27,7 +27,7 @@ def ScrapeView(request):
             #from .sentiment import getSentiment
 
             happyScrape(form.cleaned_data['brand'], form.cleaned_data['car_model'])
-            #happyScrape2(form.cleaned_data['brand'], form.cleaned_data['car_model'])
+            happyScrape2(form.cleaned_data['brand'], form.cleaned_data['car_model'])
             
             #getSentiment()
 

@@ -19,9 +19,20 @@
   <form action="scrape"  method = "POST">
     {{ SelectCarForm }}
 
+    <!--Cross-site request forgery (also known as CSRF) is a web security vulnerability that allows an attacker to induce users to perform actions that they do not intend to perform -->
     {% csrf_token %}
     <button type="submit" name="run_script">Scrape Away!</button>
 </form>
+
+
+<form action="{% url 'score' %}">
+  <input type="submit" value="Get Vaahan Score">
+</form>
+<!-- <button onclick="location.href = {% url 'score' %}">
+
+</button>
+<a href="{% url 'score' %}" class="btn btn-default">Get Vaahan Score</a> -->
+
 <!-- <form action="score" method = "POST">
 
   {% csrf_token %}

@@ -1,6 +1,8 @@
 """Experimented with scraping team-bhp"""
 #from .forms import SelectCarForm
 import requests
+#The lxml XML toolkit is a Pythonic binding for the C libraries libxml2 and libxslt
+#html5lib is a pure-python library for parsing HTML
 from lxml import html
 import time
 
@@ -12,35 +14,35 @@ def happyScrape2(brand,model):
         url = 'https://www.team-bhp.com/forum/luxury-imports-niche/213083-looking-buying-bmw-x1-need-advice.html'
 
     elif brand == 'BMW' and model == 'X3':
-        url = 'https://www.carwale.com/bmw-cars/x3-2018-2022/user-reviews/'
+        url = 'https://www.team-bhp.com/forum/test-drives-initial-ownership-reports/247865-review-2022-bmw-x3-lci.html'
     elif brand == 'BMW' and model == 'X5':
-        url = 'https://www.carwale.com/bmw-cars/x5/user-reviews/'
+        url = 'https://www.team-bhp.com/forum/indian-car-scene/202166-4th-gen-bmw-x5-now-launched.html'
     elif brand == 'BMW' and model == 'X7':
-        url = 'https://www.carwale.com/bmw-cars/x7/user-reviews/'
+        url = 'https://www.team-bhp.com/forum/indian-car-scene/211463-bmw-x7-launched-rs-98-90-lakh.html'
     elif brand == 'BMW' and model == '3S':
-        url = 'https://www.carwale.com/bmw-cars/3-series/user-reviews/'
+        url = 'https://www.team-bhp.com/forum/official-new-car-reviews/228796-review-bmw-330i-g20.html'
     elif brand == 'BMW' and model == '5S':
-        url = 'https://www.carwale.com/bmw-cars/5-series-2017-2021/user-reviews/'
+        url = 'https://www.team-bhp.com/forum/luxury-imports-niche/238922-advice-buying-bmw-5-series-lci.html'
     elif brand == 'BMW' and model ==' 7S':
-        url = 'https://www.carwale.com/bmw-cars/7-series/user-reviews/'
+        url = 'https://www.team-bhp.com/forum/indian-car-scene/211465-bmw-7-series-facelift-launched-rs-1-22-crore.html'
     elif brand == 'HN' and model == 'AM':
-        url = 'https://www.carwale.com/honda-cars/amaze/user-reviews/'
+        url = 'https://www.team-bhp.com/forum/official-new-car-reviews/200430-honda-amaze-official-review.html'
     elif brand == 'MR' and model == 'EC':
-        url = 'https://www.carwale.com/mercedes-benz-cars/e-class/user-reviews/'
+        url = 'https://www.team-bhp.com/forum/official-new-car-reviews/185529-driven-2017-mercedes-e-class.html'
     elif brand == 'AU' and model == 'A4':
-        url = 'https://www.carwale.com/audi-cars/a4/user-reviews/'
+        url = 'https://www.team-bhp.com/forum/test-drives-initial-ownership-reports/248015-2022-audi-a4-premium-review-case-base-spec.html'
     elif brand == 'AU' and model == 'A8':
-        url = 'https://www.carwale.com/audi-cars/a8-l-2018-2022/user-reviews/'
+        url = 'https://www.team-bhp.com/forum/test-drives-initial-ownership-reports/224958-driven-audi-a8l-review-3-0-v6-turbo-petrol.html'
     elif brand == 'AU' and model == 'A3':
-        url = 'https://www.carwale.com/audi-cars/a3/user-reviews/'
+        url = 'https://www.team-bhp.com/forum/official-new-car-reviews/154206-audi-a3-official-review.html'
     elif brand == 'AU' and model == 'A6':
-        url = 'https://www.carwale.com/audi-cars/a6/user-reviews/'
+        url = 'https://www.team-bhp.com/forum/test-drives-initial-ownership-reports/243367-my-audi-a6-45-tfsi-ownership-review.html'
     elif brand == 'AU' and model == 'Q2':
-        url = 'https://www.carwale.com/audi-cars/q2/user-reviews/'
+        url = 'https://www.team-bhp.com/forum/test-drives-initial-ownership-reports/229489-driven-audi-q2-unveiling-review.html'
     elif brand == 'AU' and model == 'Q5':
-        url = 'https://www.carwale.com/audi-cars/q5-2018-2020/user-reviews/'
+        url = 'https://www.team-bhp.com/forum/official-new-car-reviews/243690-2021-audi-q5-facelift-review.html'
     elif brand == 'AU' and model == ' Q7':
-        url = 'https://www.carwale.com/audi-cars/q7-2015-2020/user-reviews/'
+        url = 'https://www.team-bhp.com/forum/test-drives-initial-ownership-reports/58174-my-first-exotic-suv-audi-q7.html'
     else:
         url = ''
 
@@ -51,10 +53,11 @@ def happyScrape2(brand,model):
 
     scrapeList2 = []
 
-
+    lineBR = "-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
     for e in source_code.xpath(path):
         #print(e.text_content())
         scrapeList2.append(e.text_content())
+        scrapeList2.append(lineBR)
     
     with open(r'./scrape/scrapeListFile.txt', 'a') as f:
         for item in scrapeList2:

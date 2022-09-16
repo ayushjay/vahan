@@ -1,3 +1,4 @@
+#Requests is a HTTP library for the Python programming language. The goal of the project is to make HTTP requests simpler and more human-friendly.
 import requests
 from bs4 import BeautifulSoup
 
@@ -44,6 +45,7 @@ def happyScrape(brand, model):
     cw_result = requests.get(url, headers=headers)
 
     #cw_soup = BeautifulSoup(cw_result.text, 'html.parser')
+    #Beautiful Soup gives us a BeautifulSoup object, which represents the document as a nested data structure from html
     cw_soup = BeautifulSoup(cw_result.text, 'html5lib')
 
     #print (BeautifulSoup(cw_result.text,'html5lib'))
@@ -53,9 +55,10 @@ def happyScrape(brand, model):
 
     #myPosts = cw_soup.find_all('div', class_='o-eZTujG o-eemiLE o-cYdrZi o-fyWCgU undefined')
     scrapeListHtml = cw_soup.find_all('div', {'class': 'o-eZTujG o-eemiLE o-cYdrZi o-fyWCgU undefined'})
-
+    lineBR = "-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
     for data in scrapeListHtml:
         scrapeList.append(data.text)
+        scrapeList.append(lineBR)
 
 
 

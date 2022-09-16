@@ -8,7 +8,7 @@
 				<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
 					<div class="cs-logo">
 						<div class="cs-media">
-							<figure  class="main_logo"> <a href="index.html"><h3 style="color: white !important"; >Vaahan</h3>
+							<figure  class="main_logo"> <a href="{% url 'index' %}"><h3 style="color: white !important"; >Vaahan</h3>
 								<!-- <img src="{% static 'assets/images/images_logo.png' %}" alt="" />-->
 							</a></figure>
 						</div>
@@ -19,12 +19,12 @@
 						<nav class="main-navigation">
 							<ul>
 								<li><a href="{% url 'index' %}">Home</a></li>
-								<li><a href="{% url 'scrape' %}">Get Vaahan Score</a></li>
+								<li><a href="{% url 'scrape' %}">Vaahan  Scrape & Score &#8482;</a></li>
 
-								<li><a href="{% url 'about' %}">About Us</a></li>
+								<li><a href="{% url 'about' %}">About Us</a></li> 
 								<li><a href="{% url 'inventory' %}">Inventory</a></li>
 								<li><a href="{% url 'dealers' %}">Dealers</a></li>
-								<li><a href="{% url 'contact' %}">Contact</a></li>
+								<li><a href="{% url 'contact' %}">Contact</a></li> 
 
 							</ul>
 						</nav>
