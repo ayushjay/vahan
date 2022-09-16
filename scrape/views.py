@@ -1,14 +1,13 @@
-from django.shortcuts import render
-
+from django.shortcuts import redirect,render
 from scrape.scrape import happyScrape
 from .forms import SelectCarForm
-
+from requests.exceptions import MissingSchema
 from django.http import (
     Http404, HttpResponse, HttpResponsePermanentRedirect, HttpResponseRedirect,
 )
 from django.urls import reverse
 
-# TODO add view for url not found
+
 
 def ScrapeView(request):
 
@@ -19,17 +18,22 @@ def ScrapeView(request):
     #   if k == 'BMW' and v == "X1":
     #conList =  context.items()
     #request.session['conList'] = conList
-    if request.method == 'POST' and 'run_script' in request.POST:
-        form = SelectCarForm(request.POST)
-        if form.is_valid():
-            from .scrape import happyScrape
-            from .scrape2 import happyScrape2
-            #from .sentiment import getSentiment
+    try:
 
-            happyScrape(form.cleaned_data['brand'], form.cleaned_data['car_model'])
-            happyScrape2(form.cleaned_data['brand'], form.cleaned_data['car_model'])
-            
-            #getSentiment()
+        if request.method == 'POST' and 'run_script' in request.POST:
+            form = SelectCarForm(request.POST)
+            if form.is_valid():
+                from .scrape import happyScrape
+                from .scrape2 import happyScrape2
+                #from .sentiment import getSentiment
+
+                happyScrape(form.cleaned_data['brand'], form.cleaned_data['car_model'])
+                happyScrape2(form.cleaned_data['brand'], form.cleaned_data['car_model'])
+                
+                #getSentiment()
+
+    except MissingSchema:
+        return render(request,'badSelect.html')
 
 
         
