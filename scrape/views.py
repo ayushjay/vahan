@@ -59,7 +59,7 @@ def ScoreView(request):
     
 
     context = {}
-    context['polarity'] = getSentiment()
+    context['ps'] = getSentiment()
 
     return render(request, "score.html", context)
 

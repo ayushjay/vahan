@@ -10,7 +10,19 @@ def getSentiment():
         #    analysis = TextBlob(line)
 
         #print (analysis.sentiment.polarity)
-        return round(analysis.sentiment.polarity * 5 + 5,2)
+        polarity = round(analysis.sentiment.polarity * 5 + 5,2)
+        subjectivity = analysis.sentiment.subjectivity
+
+        if subjectivity <= 0.25:
+            subjectivity = 'is not opinion-based'
+        elif subjectivity <= 0.5:
+            subjectivity = 'is somewhat opnion-based'
+        elif subjectivity <= 0.75:
+            subjectivity = 'is opinion-based'
+        elif subjectivity <= 1:
+            subjectivity = 'is highly opnion-based'            
+
+        return polarity, subjectivity
 
 #print (analysis.sentiment)
 
