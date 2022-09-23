@@ -18,6 +18,10 @@ def ScrapeView(request):
     #   if k == 'BMW' and v == "X1":
     #conList =  context.items()
     #request.session['conList'] = conList
+    
+    
+    
+    
     try:
 
         if request.method == 'POST' and 'run_script' in request.POST:
@@ -30,10 +34,10 @@ def ScrapeView(request):
                 happyScrape(form.cleaned_data['brand'], form.cleaned_data['car_model'])
                 happyScrape2(form.cleaned_data['brand'], form.cleaned_data['car_model'])
                 
-                #getSentiment()
+            #getSentiment()
 
     except MissingSchema:
-        return render(request,'badSelect.html')
+       return render(request,'badSelect.html')
 
 
         
