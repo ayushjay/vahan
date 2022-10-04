@@ -25,8 +25,7 @@ def happyScrape2(brand,model):
         url = 'https://www.team-bhp.com/forum/luxury-imports-niche/238922-advice-buying-bmw-5-series-lci.html'
     elif brand == 'BMW' and model ==' 7S':
         url = 'https://www.team-bhp.com/forum/indian-car-scene/211465-bmw-7-series-facelift-launched-rs-1-22-crore.html'
-    elif brand == 'HN' and model == 'AM':
-        url = 'https://www.team-bhp.com/forum/official-new-car-reviews/200430-honda-amaze-official-review.html'
+    
     elif brand == 'MR' and model == 'EC':
         url = 'https://www.team-bhp.com/forum/official-new-car-reviews/185529-driven-2017-mercedes-e-class.html'
     elif brand == 'AU' and model == 'A4':

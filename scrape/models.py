@@ -6,7 +6,6 @@ class SelectCar(models.Model):
     BRANDS = (
         ('BMW','BMW'),
         ('MR','Mercedes'),
-        ('HN','Honda'),
         ('AU','Audi'),
         
     )
@@ -28,7 +27,6 @@ class SelectCar(models.Model):
         ('Q2','Q2'),
         ('Q5','Q5'),
         ('Q7','Q7'),
-        ('AM','Amaze'),
         ('EC','E-class'),
 
 
