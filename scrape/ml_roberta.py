@@ -14,3 +14,7 @@ def getSentiment_ml():
         print(new_text)
         print("Old length: ", len(content))
         print("New length: ", len(new_text))
+
+        print(sentiment_analysis(new_text))
+
+getSentiment_ml()
