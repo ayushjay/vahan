@@ -1,11 +1,22 @@
 from webbrowser import get
 from textblob import TextBlob
+from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
+
 
 
 def getSentiment():
     with open("/home/ayush/myproj/vaahan/scrape/scrapeListFile.txt","r") as f:
         content = f.read()
-        analysis = TextBlob(content)
+
+        words = [word for word in content.split() if word.lower() not in ENGLISH_STOP_WORDS]
+        new_text = " ".join(words)
+        print(new_text)
+        print("Old length: ", len(content))
+        print("New length: ", len(new_text))
+
+
+        
+        analysis = TextBlob(new_text)
         #for line in f.read().split('\n'):
         #    analysis = TextBlob(line)
 
