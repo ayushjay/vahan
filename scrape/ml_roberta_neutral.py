@@ -1,19 +1,11 @@
 from transformers import pipeline
 from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
-"""
-To solve error :token indices sequence length is longer than the specified maximum sequence length, we use truncation
-"""
-
-
-
-sentiment_analysis = pipeline("sentiment-analysis",model="siebert/sentiment-roberta-large-english",truncation=True)
-#print(sentiment_analysis("I love this!"))
+classifier = pipeline("text-classification", model="j-hartmann/sentiment-roberta-large-english-3-classes", return_all_scores=True,truncation=True)
 
 
 
 
-
-def getSentiment_ml():
+def getSentiment_ml2():
     with open("/home/ayush/myproj/vaahan/scrape/scrapeListFile.txt","r") as f:
         content = f.read()
 
@@ -22,9 +14,9 @@ def getSentiment_ml():
         #print(new_text)
         print("Old length: ", len(content))
         print("New length: ", len(new_text))
-        print (sentiment_analysis(content))
+        print (classifier(content))
         """
-        sentiList = sentiment_analysis(new_text)
+        sentiList = classifier(new_text)
         for d in sentiList:
             label = d['label']
         for e in sentiList:
@@ -32,6 +24,7 @@ def getSentiment_ml():
         print (label)
         print (round(score* 100,2))
         """
+        
 
 
-getSentiment_ml()
+getSentiment_ml2()
