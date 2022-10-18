@@ -22,16 +22,17 @@ def getSentiment_ml():
         #print(new_text)
         print("Old length: ", len(content))
         print("New length: ", len(new_text))
-        print (sentiment_analysis(content))
-        """
+        #print (sentiment_analysis(content))
+        
         sentiList = sentiment_analysis(new_text)
         for d in sentiList:
             label = d['label']
-        for e in sentiList:
+        for d in sentiList:
             score = d['score']
-        print (label)
-        print (round(score* 100,2))
-        """
+        return label, round(score* 100,2)
+        #print (label)
+        #print (round(score* 100,2))
+        
 
 
 getSentiment_ml()

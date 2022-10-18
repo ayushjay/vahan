@@ -67,6 +67,15 @@ def ScoreView(request):
 
     return render(request, "score.html", context)
 
+def MLScoreView(request):
+    from .ml_roberta import getSentiment_ml
+    
+
+    context = {}
+    context['ls'] = getSentiment_ml()
+
+    return render(request, "ml_score.html", context)
+
 
 
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+
+    <title>Vaahan</title>
+{% include 'head.html' %}
+</head>
+
+<body class="wp-automobile">
+  {% include 'nav.html' %}
+  {% block content %}
+  {% endblock content %}
+
+<h2>
+  Your Review Label is 
+
+  
+    {{ ls.0 }} <br>
+
+  Vaahan Score is {{ ls.1 }}
+
+    
+</h2>
+  {% include 'footer.html' %}
+  {% include 'scripts.html' %}
+ 
+
+   
+</body>
+</html>

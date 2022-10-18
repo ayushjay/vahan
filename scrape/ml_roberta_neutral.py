@@ -15,15 +15,15 @@ def getSentiment_ml2():
         print("Old length: ", len(content))
         print("New length: ", len(new_text))
         print (classifier(content))
-        """
+        
         sentiList = classifier(new_text)
         for d in sentiList:
             label = d['label']
-        for e in sentiList:
+        for d in sentiList:
             score = d['score']
         print (label)
         print (round(score* 100,2))
-        """
+        
         
 
 
