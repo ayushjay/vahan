@@ -29,7 +29,7 @@ def getSentiment_ml():
             label = d['label']
         for d in sentiList:
             score = d['score']
-        return label, round(score* 100,2)
+        return label, round(score* 10,2)
         #print (label)
         #print (round(score* 100,2))
         
