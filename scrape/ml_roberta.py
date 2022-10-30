@@ -1,3 +1,8 @@
+"""Pipeline performs all pre-processing and post-processing steps on your input text data. 
+it performs some pre-processing steps like converting text into numerical values and post-processing 
+steps like generating sentiment of a text and these steps may vary depending upon the task of a pre-trained model.
+"""
+
 from transformers import pipeline
 from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 """
@@ -5,7 +10,7 @@ To solve error :token indices sequence length is longer than the specified maxim
 """
 
 
-
+"""Truncation=True for specfied length"""
 sentiment_analysis = pipeline("sentiment-analysis",model="siebert/sentiment-roberta-large-english",truncation=True)
 #print(sentiment_analysis("I love this!"))
 

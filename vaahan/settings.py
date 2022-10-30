@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'dealers',
     'django_filters',
     'scrape',
+    'mathfilters',
 ]
 
 MIDDLEWARE = [
