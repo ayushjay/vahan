@@ -5,8 +5,8 @@
 
 {% block content %}
 	<!-- Main Start -->
-	<div class="main-section">
 		<!--Main Banner-->
+			
 		<div class="page-section" style="background: url({% static 'assets/extra-images/bg_img2.jpg' %})no-repeat; background-size:cover; padding:206px 0 80px; text-shadow: 3px 4px 6px rgba(0,0,0,.37);margin-top:-30px;">
 			<div class="container">
 				<div class="row">
@@ -21,7 +21,13 @@
 				</div>
 			</div>
 		</div>
-		<!--Main Banner-->
+
+		
+
+
+</div>
+	
+				<!--Main Banner-->
 		<!--Main Banner form-->
 		<div class="page-section" style="background: rgba(36, 41, 49, 1); padding-top:33px;-webkit-box-shadow: 0 0 5px rgba(0,0,0,.4), inset 1px 2px rgba(255,255,255,.3);-moz-box-shadow: 0 0 5px rgba(0,0,0,.4), inset 1px 2px rgba(255,255,255,.3);box-shadow: 0 0 5px rgba(0,0,0,.4), inset 0px 2px rgba(255,255,255,.3);border: solid 1px #242931;margin-bottom:110px;">
 			<div class="container">
@@ -35,23 +41,7 @@
 								<p>Brand:</p>
 									{{ myFilter.form.brand }}
 									</div>
-									<!--
-									<div class="col-lg-1 col-md-1 col-sm-4 col-xs-4">
-								<p>Category:</p>
-									{{ myFilter.form.category }}
-									</div>
-									<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
-								<p>Year greater then:</p>
-									{{ myFilter.form.year_gt }}
-									</div>
-									<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
-								<p>Year less then:</p>
-									{{ myFilter.form.year_lt }}
-									</div>
-								<div class="col-lg-1 col-md-1 col-sm-4 col-xs-4">
-								<p>Transmission:</p>
-									{{ myFilter.form.transmission }}
-									</div>-->
+									
 									<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
 								<p>Price greather then:</p>
 									{{ myFilter.form.price_gt }}
@@ -64,42 +54,14 @@
 
 
 
-	<br>
 			<button class="btn btn-dark" type="submit">Search</button>
 								</form>
 							</div>
-							<!--Element Section End-->
+						
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!--Main Banner form-->
-		
-		<!-- <div class="page-section" style="margin-bottom:110px;">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-						<div class="image-frame defualt">
-							<div class="cs-media">
-								<figure> <img src="{% static 'assets/extra-images/image-frame.jpg' %}" alt=""/> </figure>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-						<div class="cs-column-text"> <span class="cs-color" style="font-size:14px;margin-bottom:15px;text-transform: capitalize !important; font-weight:bold;">ADAPTIVE DRIVE HEAD uP DISPLAY</span>
-							<h1 style=" line-height:43px !important;">Chevy C7 Corvette
-								.</h1>
-							<p style="margin-bottom:25px; ">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-							<a href="#" class="cs-button" style="color:#fff;font-size:11px; padding:12px 45px; font-weight:bold; text-transform:uppercase;">Buy here</a> </div>
-					</div>
-				</div>
-			</div>
-		</div>
-
- -->
 	
-
-
-</div>
 {% endblock content %}

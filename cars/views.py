@@ -75,6 +75,12 @@ def inventory(request):
         'page_obj':page_obj
     }
     return render(request, 'inventory.html', context )
-
+ 
+def dealers(request):
+    all_dealers = Dealer.objects.all()
+    context = {
+        'all_dealers':all_dealers
+    }
+    return render(request, 'dealers.html', context)
 
 
