@@ -5,7 +5,7 @@ from .filters import CarFilter
 from dealers.models import Dealer
 from django.core.mail import send_mail
 
-# Create your views here.
+
 def index(request):
     new_cars = Car.objects.filter(category='New')[:6]
     used_cars = Car.objects.filter(category='Used')[:6]
@@ -78,25 +78,3 @@ def inventory(request):
 
 
 
-def dealers(request):
-    all_dealers = Dealer.objects.all()
-    context = {
-        'all_dealers':all_dealers
-    }
-    return render(request, 'dealers.html', context)
-
-def contact(request):
-    if request.method == "POST":
-        name = request.POST['name']
-        email = request.POST['email']
-        message = request.POST['message']
-
-        send_mail(
-            'Question from ' + name + '  Email: ' + email,
-            message,
-            email,
-            ['']
-        )
-        return render(request, 'contact.html')
-    else:
-        return render(request, 'contact.html')

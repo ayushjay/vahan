@@ -25,9 +25,9 @@ class Car(models.Model):
                 ('Automatic','Automatic')
     )
 
-    transmission = models.CharField(max_length=50, choices=TRANSMISSION)
-    YEAR_CHOICES = [(r,r) for r in range(2005, datetime.date.today().year+1)]
-    year = models.IntegerField(('year'), choices=YEAR_CHOICES, default=datetime.datetime.now().year)
+    #transmission = models.CharField(max_length=50, choices=TRANSMISSION)
+    #YEAR_CHOICES = [(r,r) for r in range(2005, datetime.date.today().year+1)]
+    #year = models.IntegerField(('year'), choices=YEAR_CHOICES, default=datetime.datetime.now().year)
     power = models.IntegerField()
     fuel = models.IntegerField()
     price = models.IntegerField()
