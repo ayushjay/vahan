@@ -18,7 +18,6 @@ def happyScrape(brand, model):
         url = 'https://www.carwale.com/bmw-cars/5-series-2017-2021/user-reviews/'
     elif brand == 'BMW' and model ==' 7S':
         url = 'https://www.carwale.com/bmw-cars/7-series/user-reviews/'
-    
     elif brand == 'MR' and model == 'EC':
         url = 'https://www.carwale.com/mercedes-benz-cars/e-class/user-reviews/'
     elif brand == 'AU' and model == 'A4':

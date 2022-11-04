@@ -7,7 +7,7 @@ from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 def getSentiment():
     with open("/home/ayush/myproj/vaahan/scrape/scrapeListFile.txt","r") as f:
         content = f.read()
-
+        # use LIST COMREHESION
         words = [word for word in content.split() if word.lower() not in ENGLISH_STOP_WORDS]
         new_text = " ".join(words)
         print(new_text)

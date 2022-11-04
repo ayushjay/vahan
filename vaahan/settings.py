@@ -86,6 +86,9 @@ DATABASES = {
         'PASSWORD': 'Datapass(%)',
         'HOST': 'localhost',
         'PORT': '',
+        'TEST': {
+            'NAME': 'mytestdatabase',
+        },
     }
 }
 
