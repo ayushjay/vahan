@@ -24,12 +24,7 @@ from cars import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="index"),
-    path('about', views.about, name="about"),
-    path('inventory', views.inventory, name="inventory"),
-    path('dealers', views.dealers, name="dealers"),
-    #path('contact', views.contact, name="contact"),
-    path('<int:car_id>', views.car_detail, name="car_detail"),
-    path('filter_results', views.filter_results, name="filter_results"),
+ 
     path('scrape', include('scrape.urls')),
 ]
 
