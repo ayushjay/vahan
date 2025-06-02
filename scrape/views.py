@@ -1,11 +1,6 @@
-from django.shortcuts import redirect,render
-from scrape.scrape import happyScrape
+from django.shortcuts import render
 from .forms import SelectCarForm
 from requests.exceptions import MissingSchema
-from django.http import (
-    Http404, HttpResponse, HttpResponsePermanentRedirect, HttpResponseRedirect,
-)
-from django.urls import reverse
 
 
 

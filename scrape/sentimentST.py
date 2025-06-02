@@ -1,7 +1,6 @@
 #does sentiment analysis using spacyTextblob, producing same results as Textblob
 #spacytextblob is a pipeline component that enables sentiment analysis using the TextBlob
 import spacy
-from spacytextblob.spacytextblob import SpacyTextBlob
 
 
 

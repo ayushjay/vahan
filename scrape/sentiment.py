@@ -1,4 +1,3 @@
-from webbrowser import get
 from textblob import TextBlob
 from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 
