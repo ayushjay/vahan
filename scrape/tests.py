@@ -2,9 +2,6 @@ from django.test import TestCase
 from django.urls import reverse
 
 
-
-
-
 class ScorepageTests(TestCase): 
 
     def test_url_exists_at_correct_location(self):
